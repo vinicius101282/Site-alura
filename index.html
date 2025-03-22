@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movimento Horizontal</title>
+    <link rel="stylesheet" href="style.css">  <!-- Aqui estamos conectando o arquivo CSS -->
+</head>
+<body>
+    <header>
+        <h1>Movimento Horizontal</h1>
+        <nav>
+            <a href="#sec1">Introdução</a>
+            <a href="#sec2">Conteúdo</a>
+            <a href="#sec3">Conclusão</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="sec1">
+            <h2>Introdução</h2>
+            <p>Este é um projeto que demonstra o movimento de um objeto em uma tela, com a capacidade de mover a caixa para a direita e para a esquerda usando as setas do teclado.</p>
+        </section>
+
+        <section id="sec2">
+            <h2>Conteúdo</h2>
+            <p>A caixa azul se move dentro de uma área limitada, e o código usa JavaScript para detectar as teclas pressionadas (seta direita e seta esquerda) e mover a caixa conforme necessário. A movimentação é controlada por variáveis de posição e um valor de incremento de movimento.</p>
+        </section>
+
+        <section id="sec3">
+            <h2>Conclusão</h2>
+            <p>Este exemplo simples mostra como podemos usar JavaScript para criar interatividade em um site, tornando a navegação do conteúdo mais dinâmica e interessante.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Feito por Vinicius</p>
+    </footer>
+
+    <div class="container">
+        <div class="box" id="box"></div>
+    </div>
+
+    <script>
+        let box = document.getElementById("box");
+        let position = 0;
+        const step = 10;
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "ArrowRight" && position < 350) {
+                position += step;
+            } else if (event.key === "ArrowLeft" && position > 0) {
+                position -= step;
+            }
+            box.style.left = position + "px";
+        });
+    </script>
+</body>
+</html>
